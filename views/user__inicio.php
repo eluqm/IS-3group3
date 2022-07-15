@@ -10,6 +10,9 @@
         <title>Inicio</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     </head>
     <body>
         <style>
@@ -79,7 +82,7 @@
                                 <?php if ($dato->cui_usuario == $_SESSION['usersCUI']&& $dato->estado == 0): ?> 
                                 <a href="#"><span class="pregunta-icon edit-icon"></span></a>
                                 <?php elseif($_SESSION['admin']==1): ?>
-                                <a href="#"><span class="pregunta-icon x-mark-icon"></span></a>
+                                <a href="../controllers/adminController.php?action=goTo_formulario_eliminar&id_pregunta=<?php echo $dato->id;?>"><span class="pregunta-icon x-mark-icon"></span></a>
                                 <?php else: ?>
                                 <div><span class="pregunta-icon"></span></div>
                                 <?php endif;?>
