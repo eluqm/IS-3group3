@@ -3,16 +3,6 @@
     <div>
         <form class="nav-bar__barra_busqueda" action="./../controllers/pregunta.php" method="get"> 
             <input hidden name="action" value="buscar_tema">
-            <select name="anio" id="anio">
-                <option class="hidden_option" selected disabled> Año </option>
-                <?php if (isset($anios_registrados) && $anios_registrados!=0): ?>
-                <?php foreach ($anios_registrados as $dato) { ?>
-                    <option value="<?php echo $dato->anio?>"><?php echo $dato->anio?><span> año</span></option>
-                <?php } ?>
-                <?php else: ?>
-                    <option class="hidden_option" selected disabled> "No hay cursos agregados" </option>
-                <?php endif; ?>
-            </select>
             <input name="tema" id="tema" placeholder="Buscar tema">
             <button type="submit"><span class="span-icon search-icon"></span></button>
         </form>

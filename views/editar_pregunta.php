@@ -9,8 +9,8 @@
     <h1> Editar pregunta </h1>
     <br><br>
 
-        <form name="form_editar_pregunta" action="../controllers/pregunta.php" method="post">
-        <input type="hidden" name="type" value="edit_pregunta">
+        <form name="form_editar_pregunta" action="../controllers/editar_pregunta.php" method="post">
+
         Id: <input name="id" type="text"/>  <br/><br/>
         Titulo: <input name="titulo" type="text"/>  <br/><br/>
         Descripcion:  <textarea name="descripcion"> </textarea> <br/><br/>

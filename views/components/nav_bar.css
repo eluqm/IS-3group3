@@ -9,7 +9,7 @@
 }
 
 .nav-bar {
-    min-width: 1008px;
+    min-width: 1300px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -41,14 +41,8 @@
     border-radius: 10px;
 }
 
-.nav-bar__barra_busqueda select {
-    text-align: center;
-    border-radius: 10px 0 0 10px;
-    border: none;
-    background-color: var(--color_gray);
-}
-
 .nav-bar__barra_busqueda input {
+    width: calc(100% - 2rem);
     padding-left: 10px;
     border: none;
     background-color: transparent;

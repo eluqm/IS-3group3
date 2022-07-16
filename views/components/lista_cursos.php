@@ -11,12 +11,12 @@
             <?php endif; ?>
         </select>
     </form>
-                
+    <hr>
     <div class="lista-cursos__contenedor-cursos">
                     <!-- Traer de la base de datos -->      
         <?php if (isset($lista_curso) && $lista_curso!=0):?>
         <?php foreach ($lista_curso as $dato) { ?>
-            <a class="lista-cursos__curso" href="./../controllers/inicioController.php?action=get_preguntas&estado=all&curso=<?php echo $dato->idcurso;?>&anio=<?php echo $q_anio;?>"><?php echo $dato->nombre ?></a>
+            <a class="lista-cursos__curso" <?php if($curso_actual == $dato->idcurso): echo 'style="background-color: var(--color_light_gray); font-weight: 500;"'; endif;?> href="./../controllers/inicioController.php?action=get_preguntas&estado=all&curso=<?php echo $dato->idcurso;?>&anio=<?php echo $q_anio;?>"><div style="background-color:<?php if($curso_actual == $dato->idcurso): echo "var(--color_enfasis);"; endif;?>"></div><span><?php echo $dato->nombre ?></span></a>
         <?php } ?>
         <?php else: ?>
             <p>No hay cursos agregados :)</p>

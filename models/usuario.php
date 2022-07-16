@@ -1,5 +1,5 @@
 <?php
-require '../config/conexion.php';
+require_once '../config/conexion.php';
 
 class User {
 
@@ -94,6 +94,5 @@ class User {
         }
         return 0;
     }
-
 
 }

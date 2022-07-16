@@ -1,10 +1,9 @@
-
 .pregunta {
     display: flex;
     background-color: var(--color_principal);
     border-radius: 10px;
     width: 100%;
-    min-height: 100px;
+    height: auto;
 }
 
 .pregunta__contenido__info {

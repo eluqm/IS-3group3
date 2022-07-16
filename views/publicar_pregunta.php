@@ -1,3 +1,7 @@
+<?php 
+    session_start(); 
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -27,25 +31,22 @@
             <div class="publicar_pregunta">
             <h1>Publicar Pregunta</h1>
             <br/>
-            <form action="">
+            <form class="inputs-container" method="post" action="../controllers/pregunta.php">
+            <input type="hidden" name="type" value="store">
                 <div id="lateral">
                     <p>
                     <label for="">T&iacute;tulo</label>
-                    <input type="text">
+                    <input type="text" name="titulo">
                     </p><br/>
 
                     <p>
                     <label for="">Tema</label>
-                    <select name="transporte">
-                    <option>Coche</option>
-                    <option>Avión</option>
-                    <option>Tren</option>
-                    </select>
+                    <input type="text" name="tema">
                     </p><br/>
 
                     <p>
                     <label for="">Horario Disponible</label>
-                    <input type="time" value="12:00:00" max="22:30:00" min="7:00:00" step="1">
+                    <input type="time" value="12:00:00" max="22:30:00" min="7:00:00" step="1" name >
                     </p><br/>
 
                     <p>
@@ -55,9 +56,19 @@
                 </div>
                     
                 <div id="principal">
+                    
+
                     <p>
                     <label for="">Curso</label>
-                    <input type="text">
+                    
+                    <form action="./../controllers/inicioController.php" method="get">
+                        <select name="curso">
+                        <option>Coche</option>
+                        <option>Avión</option>
+                        <option>Tren</option>
+                        </select>
+                    <input type="hidden" name="type" value="listar_cursos">
+                    </form>
                     </p><br/>
 
                     <p class="input-file-wrapper">

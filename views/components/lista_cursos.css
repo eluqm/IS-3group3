@@ -8,12 +8,18 @@
 
 .lista-cursos__header{
     background-color: transparent;
-    height: 3rem;
+    height: 4rem;
     width: 100%;
     margin-bottom: inherit;
-    /*box-shadow: 0px 9px 11px -2px rgba(0, 0, 0, 0.25);*/
 }
 
+.lista-cursos hr {
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    border-top: none;
+
+}
 .lista-cursos__header select {
     border: none;
     height: 100%;
@@ -21,21 +27,15 @@
     text-align: center;
     border-radius: 10px 10px 0 0;
     background-color: var(--color_principal);
-    box-shadow: 0px 9px 11px -2px rgba(0, 0, 0, 0.25);
 }
 
 .lista-cursos__contenedor-cursos {
     width: 100%;
-    height: calc(100% - 3rem );
-    display: flex;
-    padding: 15px;
-    flex-direction: column;
-    gap: 15px;
+    height: calc(100% - 4rem );
     overflow-y: scroll;
     overscroll-behavior-y: contain;
     scroll-snap-type: y proximity;    
 }
-
 
 .lista-cursos__contenedor-cursos::-webkit-scrollbar {
     display: block;
@@ -52,19 +52,33 @@
 }
 
 .lista-cursos__curso {
-    border-radius: 10px;
     width: 100%;
-    text-align: center;
-    display: block;
-    padding: 10px;
-
+    min-height: 3rem;
+    text-decoration: none;
     color: black;
     font-size: 1rem;
-    text-decoration: none;
-    font-family: 'Overlock SC';
     font-style: normal;
     font-weight: 400;
     line-height: 30px;
-    
-    background-color: var(--color_light_gray);
+    display: flex;  
+    background-color: transparent;
+}
+
+.lista-cursos__curso:hover {
+    font-weight: 500;
+}
+
+.lista-cursos__curso span {
+    display: inline-block;
+    align-self: center;
+}
+
+.lista-cursos__curso div{
+    display: inline-block;
+    min-height: 2rem;
+    height: inherit;
+    padding-left: 5px;
+    margin-right: 20px;
+    background-color: transparent;
+    border-radius: 0 10px 10px 0;
 }
