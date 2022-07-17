@@ -24,31 +24,17 @@ class PreguntaController {
             'curso' => trim($_POST['curso']),
             'tema' => trim($_POST['tema']),
             'cui' => $_SESSION['usersCUI'],
-            'fecha_limite' => trim($_POST['fechaLim'])
+            'fecha_limite' => $_POST['fecha_limite']
         ];
         if( empty($data['titulo'])
             || empty($data['descripcion'])
             || empty($data['curso'])
             || empty($data['tema'])
-            || empty($data['cui'])
             || empty($data['fecha_limite'])){
-            flash("store", "Please fill out all inputs");
-            redirect("../views/publicar_pregunta.php");
+            flash("publicar_pregunta", "Error Fill all the inputs");
+            redirect("../views/editar_pregunta.php");
         }
         
-        if(!filter_var($data['usersEmail'], FILTER_VALIDATE_EMAIL)){
-            flash("register", "Invalid email");
-            redirect("../views/signup.php");
-        }
-
-        if(strlen($data['usersPwd']) < 6){
-            flash("register", "Invalid password");
-            redirect("../views/signup.php");
-        } else if($data['usersPwd'] !== $data['pwdRepeat']){
-            flash("register", "Passwords don't match");
-            redirect("../views/signup.php");
-        }
-
         if($this->preguntaModel->register($data))
         {
             redirect("../views/user__inicio.php");
@@ -89,9 +75,10 @@ class PreguntaController {
 $init = new PreguntaController;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    switch($_POST['action']){
+    switch($_POST['type']){
         case 'store':
             $init->store();
+            break;
         default:
             redirect("../views/publicar_pregunta.php");
     }

@@ -16,5 +16,6 @@
             <span class="user-image"></span> 
             <p> <?php echo $_SESSION['usersEmail'];?></p>
         </a>
+        <a href="../controllers/usuario.php?q=logout"><li>Logout</li></a>
     </div>
 </nav>

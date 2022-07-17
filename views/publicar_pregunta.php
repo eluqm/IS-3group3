@@ -32,7 +32,7 @@
             <h1>Publicar Pregunta</h1>
             <br/>
             <form class="inputs-container" method="post" action="../controllers/pregunta.php">
-            <input type="hidden" name="type" value="store">
+                <input type="hidden" name="type" value="store">
                 <div id="lateral">
                     <p>
                     <label for="">T&iacute;tulo</label>
@@ -46,12 +46,12 @@
 
                     <p>
                     <label for="">Horario Disponible</label>
-                    <input type="time" value="12:00:00" max="22:30:00" min="7:00:00" step="1" name >
+                    <input type="time" value="12:00:00" max="22:30:00" min="7:00:00" step="1" >
                     </p><br/>
 
                     <p>
                     <label for="">Fecha L&iacute;mite</label>
-                    <input type="date">
+                    <input type="datetime-local" value="2000-01-01T00:00:00" name="fecha_limite">
                     </p><br/>
                 </div>
                     
@@ -61,23 +61,20 @@
                     <p>
                     <label for="">Curso</label>
                     
-                    <form action="./../controllers/inicioController.php" method="get">
                         <select name="curso">
                         <option>Coche</option>
                         <option>Avión</option>
                         <option>Tren</option>
                         </select>
-                    <input type="hidden" name="type" value="listar_cursos">
                     </form>
                     </p><br/>
 
                     <p class="input-file-wrapper">
                     <label class="descp" for="">Descripcion</label>
-                    <textarea name="" id="" cols="30" rows="7"></textarea>
+                    <textarea name="descripcion" id="" cols="30" rows="7"></textarea>
                     </p><br/>
-
                     <p class="boton">
-                    <button>PREGUNTAR</button>
+                    <button type="submit" name="submit">Preguntar</button>
                     </p>
                 </div>
             </form>
