@@ -70,6 +70,10 @@ class PreguntaController {
         }
 
     }
+    public function show_question(Type $var = null)
+    {
+        # code...
+    }
 }
 
 $init = new PreguntaController;
@@ -90,6 +94,9 @@ else {
             break;
         case 'listar_cursos':
             $init->search_by_tema();
+            break;
+        case 'go_to_show_question':
+            $init->show_question();
             break;
         default:
             redirect("../views/login.php");
