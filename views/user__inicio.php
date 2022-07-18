@@ -71,7 +71,7 @@
                                 <p><?php echo $dato->descripcion;?></p>
                             </div>
                             <div class="pregunta__actions">
-                                <a href=""><span class="pregunta-icon eye-icon"></span></a>
+                                <a href="../controllers/pregunta.php?action=go_to_show_question&id_pregunta=<?php echo $dato->id;?>"><span class="pregunta-icon eye-icon"></span></a>
 
                                 <?php if ($dato->estado == 0 && $dato->cui_usuario != $_SESSION['usersCUI']): ?> 
                                 <a href="#"><span class="pregunta-icon checkmark-icon"></span></a>
@@ -80,7 +80,7 @@
                                 <?php endif;?>
 
                                 <?php if ($dato->cui_usuario == $_SESSION['usersCUI']&& $dato->estado == 0): ?> 
-                                <a href="../controllers/pregunta.php?action=go_to_show_question&id_pregunta=<?php echo $dato->id;?>"><span class="pregunta-icon edit-icon"></span></a>
+                                <a href="#"><span class="pregunta-icon edit-icon"></span></a>
                                 <?php elseif($_SESSION['admin']==1): ?>
                                 <a href="../controllers/adminController.php?action=goTo_formulario_eliminar&id_pregunta=<?php echo $dato->id;?>"><span class="pregunta-icon x-mark-icon"></span></a>
                                 <?php else: ?>

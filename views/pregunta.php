@@ -10,30 +10,35 @@
         <title>Mi Perfil</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/general_style.css">
-        <link rel="stylesheet" href="components/nav_bar.css">
-        <link rel="stylesheet" href="css/pregunta.css">
-        <link rel="stylesheet" href="css/main_pregunta.css">
-        <link rel="stylesheet" href="components/pregunta.css">
     </head>
     <body>
+    <style>
+            <?php include __DIR__.'/css/general_style.css';?>
+            <?php include __DIR__.'/components/nav_bar.css';?>
+
+            <?php include __DIR__.'/css/pregunta.css';?>
+            <?php include __DIR__.'/css/main_pregunta.css';?>
+            <?php include __DIR__.'/components/pregunta.css';?>
+            
+        </style>
         <header>
             <?php
-            include 'components/nav_bar.php';
+            include __DIR__.'../components/nav_bar.php';
             ?>
         </header>
 
 
-        
+    
     <main class="main-usando-navbar ">
+        
         <section class="main__contenido"> 
             <div class="main__contenido__q-list">
             <div class="main_pregunta">
             <div class="pregunta__contenido">
                 <p class="fecha">22/22/22</p>
-                <h2>Titulo de la pregunta?</h2>
+                <h2><?php echo $data->titulo;?></h2>
                 <br/><hr><br/>
-                <p class="parrafo">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                <p class="parrafo"><?php echo $data->descripcion;?></p>
             </div>
             </div>
             </div>
@@ -42,7 +47,7 @@
         <aside>
             <br/>
             <div class="pregunta__contenido_info">
-                <p>ID: 1234123412</p>
+                <p><?php echo $data->curso;?></p>
                 <a href="#"><span class="main_pregunta-icon edit-icon"></span></a>
                 <a href="#"><span class="main_pregunta-icon delete-icon"></span></a>
             </div>
@@ -50,22 +55,24 @@
             <div class="main_pregunta">
             <div class="pregunta__contenido">
                 <p class="info">Curso:</p>
-                <p class="info">Estructuras de Datos</p>
+                <p class="info"><?php echo $data->nombre_curso;?></p>
                 <br/>
                 <p class="info">Tema:</p>
-                <p class="info">Estructuras de Datos</p>
+                <p class="info"><?php echo $data->tema;?></p>
                 <br/>
                 <p class="info">Usuario:</p>
-                <p class="info">Estructuras de Datos</p>
+                <p class="info"><?php echo $data->cui_usuario;?></p>
                 <br/>
                 <p class="info">Disponibilidad:</p>
-                <p class="info">Estructuras de Datos danwfwanifwa fnawi fniawnf iwanf iwan fiawn fiw nfiaw fniwa nifni wf asd ad asd ansd nasu dnuasnd uas nduasnduans udansu dnasugtfhtf hf t hft h ft h ft hft h ft  hthtfhfthtf hfth fthft hft hft hft h</p>
+                <p class="info"><?php echo $data->disponibilidad;?></p>
                 <br/>
+                
             </div>
             </div>
             <button class="aside__button-log-out">
                 ENSE&Ntilde;AR
             </button>
+            
         </aside>
 
     </main>

@@ -45,11 +45,6 @@
                     </p><br/>
 
                     <p>
-                    <label for="">Horario Disponible</label>
-                    <input type="time" value="12:00:00" max="22:30:00" min="7:00:00" step="1" >
-                    </p><br/>
-
-                    <p>
                     <label for="">Fecha L&iacute;mite</label>
                     <input type="datetime-local" value="2000-01-01T00:00:00" name="fecha_limite">
                     </p><br/>
@@ -60,11 +55,16 @@
 
                     <p>
                     <label for="">Curso</label>
-                    
                         <select name="curso">
-                        <option>Coche</option>
-                        <option>Avión</option>
-                        <option>Tren</option>
+                            <?php
+                                include '../models/curso.php';
+                                $curso_display=new Curso;
+                                $data_cursos=$curso_display->get_all();
+                                while ($i<20) {
+                                    $i++;
+                                    echo '<option value="'.$data_cursos[$i]->nombre.'">'.$data_cursos[$i]->nombre.'</option>';
+                                }
+                            ?>
                         </select>
                     </form>
                     </p><br/>
