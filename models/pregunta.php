@@ -11,9 +11,10 @@ class Pregunta {
 
     public function register($data){
         $this->db->query('INSERT INTO pregunta (titulo, descripcion, curso, tema, fecha_publicacion,cui_usuario,disponibilidad,estado,fecha_limite)
-        VALUES (:titulo, :descripcion, 1701101, :tema, NOW(), :cui, "disp0", 0 , :fecha_limite)');
+        VALUES (:titulo, :descripcion, :curso, :tema, NOW(), :cui, "disp0", 0 , :fecha_limite)');
         $this->db->bind(':titulo', $data['titulo']);
         $this->db->bind(':descripcion', $data['descripcion']);
+        $this->db->bind(':curso', $data['curso']);
         $this->db->bind(':tema', $data['tema']);
         $this->db->bind(':cui', $data['cui']);
         $this->db->bind(':fecha_limite', $data['fecha_limite']);

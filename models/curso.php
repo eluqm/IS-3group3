@@ -36,5 +36,14 @@ class Curso {
         }
         return 0;
     }
-
+    public function search_id_course_by_name($NAME)
+    {
+        $this->db->query("SELECT curso.idcurso from curso where curso.nombre=:name_");
+        $this->db->bind('name_', $NAME);
+        $row = $this->db->resultSet();
+        if ($this->db->rowCount() > 0) {
+            return $row;
+        }
+        return 0;
+    }
 }
