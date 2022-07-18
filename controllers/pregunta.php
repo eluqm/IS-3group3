@@ -35,6 +35,9 @@ class PreguntaController {
             redirect("../views/editar_pregunta.php");
         }
         
+        $curso_=$this->curso->search_id_course_by_name($data['curso']);
+        $data['curso']=$curso_[0]->idcurso;
+
         if($this->preguntaModel->register($data))
         {
             redirect("../views/user__inicio.php");
@@ -70,9 +73,21 @@ class PreguntaController {
         }
 
     }
-    public function show_question(Type $var = null)
+    public function show_question()
     {
-        # code...
+        $data_id=$_GET['id_pregunta'];
+        if(!isset($data_id)){
+            redirect('./inicioController.php');
+        }
+        else {
+            $data = $this->preguntaModel->findQuestionById($data_id);
+            if (!isset($data)) {
+                redirect('./inicioController.php');
+            }
+            else {
+                require_once("../views/pregunta.php");
+            }
+        }
     }
 }
 
